@@ -1,0 +1,13 @@
+{
+  "name": "nodehw4",
+  "version": "1.0.0",
+  "description": "blabla",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "start": "node ./main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alan",
+  "license": "ISC"
+}
