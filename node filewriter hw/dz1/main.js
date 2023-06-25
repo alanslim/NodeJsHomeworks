@@ -13,19 +13,21 @@ stdin.on('data', (filename) => {
   clearLine();
   stdout.write('Введите ваше имя: ');
 
-  stdin.on('data', (name) => {
+  stdin.on('data', (name) => {    // VN: первый
     const trimmedName = name.toString().trim();
 
     clearLine();
     stdout.write('Введите вашу фамилию: ');
 
-    stdin.on('data', (lastname) => {
+    stdin.on('data', (lastname) => {  // VN: второй
       const trimmedLastname = lastname.toString().trim();
 
       clearLine();
       stdout.write('Введите вашу дату рождения: ');
 
-      stdin.on('data', (birthdate) => {
+      stdin.on('data', (birthdate) => {  // VN: третий обработчик на одно и то же событие.
+                                         // Четыре уровня вложенности - это очень много для такой простой задачи
+                                         // Проектируйте код. Не создавайте callback hell
         const trimmedBirthdate = birthdate.toString().trim();
 
         const data = `Имя: ${trimmedName}\nФамилия: ${trimmedLastname}\nДата рождения: ${trimmedBirthdate}`;
